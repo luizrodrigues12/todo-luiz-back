@@ -4,13 +4,20 @@ import router from "./routes/router";
 import cors from "cors";
 import connect from "./instances/mongo";
 
+const corsConfig = {
+  origin: "*",
+  credential: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+};
+
 dotenv.config();
 
 const server = express();
 
 const port = process.env.PORT || 3001;
 
-server.use(cors());
+server.options("", cors(corsConfig));
+server.use(cors(corsConfig));
 server.use(urlencoded({ extended: true }));
 server.use(express.json());
 server.use(router);

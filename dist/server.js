@@ -31,10 +31,16 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const router_1 = __importDefault(require("./routes/router"));
 const cors_1 = __importDefault(require("cors"));
 const mongo_1 = __importDefault(require("./instances/mongo"));
+const corsConfig = {
+    origin: "*",
+    credential: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+};
 dotenv_1.default.config();
 const server = (0, express_1.default)();
 const port = process.env.PORT || 3001;
-server.use((0, cors_1.default)());
+server.options("", (0, cors_1.default)(corsConfig));
+server.use((0, cors_1.default)(corsConfig));
 server.use((0, express_1.urlencoded)({ extended: true }));
 server.use(express_1.default.json());
 server.use(router_1.default);
