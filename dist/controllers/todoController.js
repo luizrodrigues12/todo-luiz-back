@@ -46,11 +46,11 @@ const home = (req, res) => {
     res.json("Hello");
 };
 exports.home = home;
-const getTasks = (req, res) => {
-    const taskList = Todo_1.default.find()
+const getTasks = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    yield Todo_1.default.find()
         .then((result) => res.json(result))
         .catch((err) => res.json(err));
-};
+});
 exports.getTasks = getTasks;
 const updateOneTask = (req, res) => {
     const { id } = req.params;

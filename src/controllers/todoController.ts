@@ -34,8 +34,8 @@ export const home = (req: Request, res: Response) => {
   res.json("Hello");
 };
 
-export const getTasks = (req: Request, res: Response) => {
-  const taskList = TodoModel.find()
+export const getTasks = async (req: Request, res: Response) => {
+  await TodoModel.find()
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
 };
