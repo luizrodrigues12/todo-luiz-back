@@ -27,6 +27,7 @@ const express_1 = require("express");
 const todoController = __importStar(require("../controllers/todoController"));
 const router = (0, express_1.Router)();
 router.get("/ping", todoController.ping);
+router.get("/", todoController.home);
 router.post("/add", todoController.addTask);
 router.get("/get", todoController.getTasks);
 router.put("/updateone/:id", todoController.updateOneTask);

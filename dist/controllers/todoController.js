@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteTask = exports.updateTask = exports.updateOneTask = exports.getTasks = exports.addTask = exports.ping = void 0;
+exports.deleteTask = exports.updateTask = exports.updateOneTask = exports.getTasks = exports.home = exports.addTask = exports.ping = void 0;
 const Todo_1 = __importDefault(require("../models/Todo"));
 let caughtDone;
 const ping = (req, res) => {
@@ -42,6 +42,10 @@ const addTask = (req, res) => {
     }
 };
 exports.addTask = addTask;
+const home = (req, res) => {
+    res.json("Hello");
+};
+exports.home = home;
 const getTasks = (req, res) => {
     const taskList = Todo_1.default.find()
         .then((result) => res.json(result))
