@@ -4,6 +4,7 @@ import * as todoController from "../controllers/todoController";
 const router = Router();
 
 router.get("/ping", todoController.ping);
+router.get("/", todoController.home);
 
 router.post("/add", todoController.addTask);
 router.get("/get", todoController.getTasks);

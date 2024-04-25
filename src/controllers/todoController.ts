@@ -30,6 +30,10 @@ export const addTask = (req: Request, res: Response) => {
   }
 };
 
+export const home = (req: Request, res: Response) => {
+  res.json("Hello");
+};
+
 export const getTasks = (req: Request, res: Response) => {
   const taskList = TodoModel.find()
     .then((result) => res.json(result))
