@@ -1,2 +1,2 @@
 [build]
-    fuctions = "dist/server.js"
+    fuctions = "dist/"
